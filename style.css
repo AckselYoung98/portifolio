@@ -1,0 +1,156 @@
+/* style.css */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f4f8;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #005f99;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.perfil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 20px;
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.perfil img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 4px solid #005f99;
+}
+
+.perfil p {
+  max-width: 600px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.habilidades {
+  background: #ffffff;
+  margin: 20px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.habilidades h2 {
+  color: #005f99;
+  margin-bottom: 15px;
+}
+
+.habilidades ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.habilidades li {
+  background: #e9f3fb;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.contato {
+  text-align: center;
+  padding: 30px;
+}
+
+.contato h2 {
+  color: #005f99;
+  margin-bottom: 15px;
+}
+
+.contato a {
+  text-decoration: none;
+  color: #0077cc;
+  margin: 0 10px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.contato a:hover {
+  color: #003d66;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #ddd;
+  font-size: 0.9rem;
+}
+
+/* Responsividade para telas pequenas (celulares) */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  .perfil {
+    padding: 20px 10px;
+  }
+
+  .perfil img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .perfil p {
+    padding: 0 10px;
+    font-size: 0.95rem;
+  }
+
+  .habilidades {
+    padding: 20px;
+    margin: 10px;
+  }
+
+  .habilidades h2 {
+    font-size: 1.2rem;
+  }
+
+  .habilidades li {
+    font-size: 0.95rem;
+  }
+
+  .contato {
+    padding: 20px;
+  }
+
+  .contato h2 {
+    font-size: 1.2rem;
+  }
+
+  .contato a {
+    display: block;
+    margin: 10px 0;
+  }
+}
