@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfólio - Acksel</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acksel Young - Portfólio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <header>
-    <h1>Acksel Young</h1>
-    <img src="perfil.png" alt="Foto de Acksel" width="150">
+  <header class="hero">
+    <div class="container">
+      <h1>Acksel Young</h1>
+      <p>Desenvolvedor Frontend em transição | Analista de Suporte</p>
+      <a class="btn" href="Curriculo_Acksel_Atualizado.pdf" download>📄 Baixar Currículo</a>
+    </div>
   </header>
 
-  <nav>
+  <nav class="navbar">
     <ul>
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="#habilidades">Habilidades</a></li>
@@ -23,52 +25,57 @@
   </nav>
 
   <main>
-
-    <section id="sobre">
-      <h2>Sobre Mim</h2>
-      <p>Olá! Me chamo Acksel e atuo há mais de 4 anos na área técnica. Tenho experiência como Analista de Suporte na JBS, prestando assistência direta aos usuários, resolução de problemas em sistemas e manutenção de equipamentos. Também atuei por 2 anos como Faturista, com emissão de notas fiscais (nacionais e internacionais), controle de armazenagem e rastreabilidade.</p>
-      <p>Atualmente estou ampliando minhas habilidades na área de tecnologia e desenvolvimento web. Estou preparado para atuar em projetos que envolvam suporte remoto, planilhas inteligentes, automação de tarefas e sites responsivos.</p>
-    </section>
-
-    <section id="habilidades">
-      <h2>Habilidades</h2>
-      <ul>
-        <li>Suporte técnico e remoto</li>
-        <li>Manutenção de computadores e redes</li>
-        <li>Criação e automação de planilhas (Excel/Google Sheets)</li>
-        <li>HTML, CSS e responsividade</li>
-        <li>Git e GitHub (versionamento e deploy)</li>
-        <li>Organização de arquivos e documentação técnica</li>
-      </ul>
-    </section>
-
-    <section id="projetos">
-      <h2>Projetos</h2>
-      <div>
-        <h3>Portfólio Pessoal</h3>
-        <p>Site criado em HTML e CSS com layout responsivo, hospedado no GitHub Pages.</p>
-        <a href="https://ackselyoung98.github.io/portifolio/" target="_blank">Ver projeto</a>
-      </div>
-      <div>
-        <h3>Planilha de Controle de Estoque (exemplo)</h3>
-        <p>Modelo de planilha com fórmulas, validações e dashboard para controle de estoque.</p>
-        <a href="#" target="_blank">Disponível sob solicitação</a>
+    <section id="sobre" class="section">
+      <div class="container">
+        <h2>Sobre Mim</h2>
+        <p>Sou Acksel Young, profissional com mais de 6 anos de experiência na JBS atuando em suporte, faturamento e rastreabilidade. Estou em transição para a área de Desenvolvimento Frontend, com projetos em HTML, CSS, JavaScript e MySQL. Gosto de criar soluções simples, funcionais e com foco em experiência do usuário.</p>
       </div>
     </section>
 
-    <section id="contato">
-      <h2>Contato</h2>
-      <p>📧 youngoliveira97@gmail.com</p>
+    <section id="habilidades" class="section">
+      <div class="container">
+        <h2>Habilidades</h2>
+        <div class="skills">
+          <div class="card">HTML, CSS, JavaScript</div>
+          <div class="card">Git & GitHub</div>
+          <div class="card">React.js (em aprendizado)</div>
+          <div class="card">MySQL e CRUD</div>
+          <div class="card">Suporte Técnico</div>
+          <div class="card">Sistemas ERP</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projetos" class="section">
+      <div class="container">
+        <h2>Projetos</h2>
+        <div class="projects">
+          <div class="project-card">
+            <h3>Portfólio Pessoal</h3>
+            <p>Este site que você está navegando é um projeto responsivo publicado via GitHub Pages.</p>
+            <a href="https://ackselyoung98.github.io/portifolio/" target="_blank">Ver online</a>
+          </div>
+          <div class="project-card">
+            <h3>Planilha de Estoque</h3>
+            <p>Planilha com fórmulas, validações e dashboard para controle de estoque (exemplo).</p>
+            <a href="#">Disponível sob solicitação</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="section">
+      <div class="container">
+        <h2>Contato</h2>
+         <p>📧 youngoliveira97@gmail.com</p>
      <p>📱 <a href="https://wa.me/+5534999677769" target="_blank">WhatsApp</a></p>
       <p>🌐 <a href="https://www.linkedin.com/in/acksel-young" target="_blank">LinkedIn</a></p>
-      <a href="curriculo_acksel.pdf" download>📄 Baixar Currículo</a>
+      </div>
     </section>
-
   </main>
 
   <footer>
     <p>&copy; 2025 Acksel Young. Todos os direitos reservados.</p>
   </footer>
-
 </body>
 </html>
