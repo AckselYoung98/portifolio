@@ -236,3 +236,21 @@ document.getElementById("start").addEventListener("click", () => {
   updateScore();
   update();
 });
+function move(direction) {
+  if (direction === 'left') {
+    player.pos.x--;
+    if (collide(arena, player)) player.pos.x++;
+  } else if (direction === 'right') {
+    player.pos.x++;
+    if (collide(arena, player)) player.pos.x--;
+  }
+}
+
+function rotate() {
+  playerRotate(1);
+}
+
+function drop() {
+  playerDrop();
+}
+
