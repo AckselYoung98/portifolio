@@ -246,7 +246,7 @@ function move(direction) {
   }
 }
 
-function rotate() {
+function rotatePiece() {
   playerRotate(1);
 }
 
