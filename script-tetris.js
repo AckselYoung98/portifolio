@@ -1,13 +1,18 @@
-// script-tetris.js
 const canvas = document.getElementById("tetris");
 const ctx = canvas.getContext("2d");
-ctx.scale(20, 20);
 
-const matrix = [
-  [0, 0, 0],
-  [1, 1, 1],
-  [0, 1, 0]
-];
+let blockSize = 20;
+
+function ajustarCanvas() {
+  const larguraReal = Math.min(window.innerWidth * 0.9, 240);
+  blockSize = Math.floor(larguraReal / 12);
+  canvas.width = blockSize * 12;
+  canvas.height = blockSize * 20;
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
+  ctx.scale(blockSize, blockSize);
+}
+window.addEventListener("resize", ajustarCanvas);
+ajustarCanvas();
 
 function createMatrix(w, h) {
   const matrix = [];
@@ -18,49 +23,16 @@ function createMatrix(w, h) {
 }
 
 function createPiece(type) {
-  if (type === 'T') {
-    return [
-      [0, 0, 0],
-      [1, 1, 1],
-      [0, 1, 0]
-    ];
-  } else if (type === 'O') {
-    return [
-      [2, 2],
-      [2, 2]
-    ];
-  } else if (type === 'L') {
-    return [
-      [0, 3, 0],
-      [0, 3, 0],
-      [0, 3, 3]
-    ];
-  } else if (type === 'J') {
-    return [
-      [0, 4, 0],
-      [0, 4, 0],
-      [4, 4, 0]
-    ];
-  } else if (type === 'I') {
-    return [
-      [0, 5, 0, 0],
-      [0, 5, 0, 0],
-      [0, 5, 0, 0],
-      [0, 5, 0, 0]
-    ];
-  } else if (type === 'S') {
-    return [
-      [0, 6, 6],
-      [6, 6, 0],
-      [0, 0, 0]
-    ];
-  } else if (type === 'Z') {
-    return [
-      [7, 7, 0],
-      [0, 7, 7],
-      [0, 0, 0]
-    ];
-  }
+  const pieces = {
+    T: [[0,0,0],[1,1,1],[0,1,0]],
+    O: [[2,2],[2,2]],
+    L: [[0,3,0],[0,3,0],[0,3,3]],
+    J: [[0,4,0],[0,4,0],[4,4,0]],
+    I: [[0,5,0,0],[0,5,0,0],[0,5,0,0],[0,5,0,0]],
+    S: [[0,6,6],[6,6,0],[0,0,0]],
+    Z: [[7,7,0],[0,7,7],[0,0,0]],
+  };
+  return pieces[type];
 }
 
 function drawMatrix(matrix, offset) {
@@ -216,14 +188,10 @@ const player = {
 document.addEventListener("keydown", event => {
   if (event.key === "ArrowLeft") {
     player.pos.x--;
-    if (collide(arena, player)) {
-      player.pos.x++;
-    }
+    if (collide(arena, player)) player.pos.x++;
   } else if (event.key === "ArrowRight") {
     player.pos.x++;
-    if (collide(arena, player)) {
-      player.pos.x--;
-    }
+    if (collide(arena, player)) player.pos.x--;
   } else if (event.key === "ArrowDown") {
     playerDrop();
   } else if (event.key === "ArrowUp") {
@@ -236,6 +204,8 @@ document.getElementById("start").addEventListener("click", () => {
   updateScore();
   update();
 });
+
+// Botões para celular
 function move(direction) {
   if (direction === 'left') {
     player.pos.x--;
@@ -253,17 +223,3 @@ function rotatePiece() {
 function drop() {
   playerDrop();
 }
-function ajustarCanvas() {
-  const larguraTela = window.innerWidth;
-  const larguraCanvas = larguraTela < 500 ? 200 : 240;
-  const alturaCanvas = larguraTela < 500 ? 360 : 400;
-
-  canvas.width = larguraCanvas;
-  canvas.height = alturaCanvas;
-  ctx.setTransform(1, 0, 0, 1, 0, 0); // Reset escala
-  ctx.scale(larguraCanvas / 12, alturaCanvas / 20);
-}
-
-window.addEventListener("resize", ajustarCanvas);
-ajustarCanvas();
-
