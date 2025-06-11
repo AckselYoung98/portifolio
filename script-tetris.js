@@ -253,4 +253,17 @@ function rotatePiece() {
 function drop() {
   playerDrop();
 }
+function ajustarCanvas() {
+  const larguraTela = window.innerWidth;
+  const larguraCanvas = larguraTela < 500 ? 200 : 240;
+  const alturaCanvas = larguraTela < 500 ? 360 : 400;
+
+  canvas.width = larguraCanvas;
+  canvas.height = alturaCanvas;
+  ctx.setTransform(1, 0, 0, 1, 0, 0); // Reset escala
+  ctx.scale(larguraCanvas / 12, alturaCanvas / 20);
+}
+
+window.addEventListener("resize", ajustarCanvas);
+ajustarCanvas();
 
